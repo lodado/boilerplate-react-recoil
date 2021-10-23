@@ -1,12 +1,14 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const indexRouter = require('./routes/index');
-const apiRouter = require('./routes/api');
+import * as createError from 'http-errors';
+import * as express from 'express';
+import * as cookieParser from 'cookie-parser';
+import * as path from 'path';
+import * as logger from 'morgan';
 
-//const session = require('express-session');
+import {ResponseError} from './interface/';
+
+import * as indexRouter from './routes/index';
+import * as apiRouter from './routes/api';
+
 const app = express();
 
 app.set('views', './bundle');
@@ -17,7 +19,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'bundle')));
-
 /*
 app.use(session({
 	key: 'chung_cookie',
@@ -29,21 +30,23 @@ app.use(session({
 */
 
 app.use('/', indexRouter);
-app.use('/', apiRouter);
+app.use('/api', apiRouter);
+
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function (req: express.Request, res: express.Response, next: express.NextFunction) {
   next(createError(404));
 });
 
+
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function (err:ResponseError, req: express.Request, res: express.Response, next: express.NextFunction) {
   // set locals, only providing error in development
+
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.send(err.message);
 });
 
-module.exports = app;
+export default app;
