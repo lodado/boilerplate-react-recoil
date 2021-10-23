@@ -6,7 +6,7 @@ boilerplate-react-recoil by webpack
 ## 시작 방법
 
 ```
-git clone https://github.com/lodado/boilerplate-TS
+git clone https://github.com/lodado/boilerplate-react-recoil
 
 cd boilerplate
 
