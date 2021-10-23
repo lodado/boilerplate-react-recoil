@@ -4,7 +4,8 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); 
-const glob = require('glob');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const tsConfigPath = path.resolve(__dirname, "./tsconfig.json");
 
 const jsRoute = './frontend';
 
@@ -15,6 +16,8 @@ const htmlPath = jsRoute + '/html/';
 const tsx = [jsPath + 'app.tsx'];
 
 console.log(__dirname);
+
+console.log(path.resolve(__dirname, "./tsconfig.json"));
 
 module.exports = {
   mode: 'development',
@@ -33,16 +36,9 @@ module.exports = {
   },
 
   resolve: {
-    alias: {
-      '@Component': path.resolve(__dirname, jsPath, 'view/component'),
-      '@Style': path.resolve(__dirname, cssPath),
-      '@Store': path.resolve(__dirname, jsPath, 'store'),
-      '@Reducer': path.resolve(__dirname, jsPath, 'reducer'),
-      '@Images': path.resolve(__dirname, jsPath, 'images'),
-      '@View': path.resolve(__dirname, jsPath, 'view'),
-    },
 
     extensions: ['.jsx', '.sass', '.scss', '.css', '.tsx', '.ts', '.js'],
+    plugins: [new TsconfigPathsPlugin({ configFile: tsConfigPath })]
   },
 
   plugins: [
@@ -65,6 +61,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin(),
+    
   ],
 
   module: {

@@ -10,9 +10,17 @@
       "allowJs": true,
       "jsx": "react",
       "allowSyntheticDefaultImports": true,
-      "keyofStringsOnly": true
+      "keyofStringsOnly": true,
+
+      "baseUrl": "./frontend/",
+
+      "paths": {
+        "@Component/*": ["javascripts/component/*"],
+        "@Interface/*": ["javascripts/interface/*"],
+        "@Style/*": ["./frontend/stylesheets/*"]
+      }
     },
-    "baseUrl": "./",
+    
     "include": ["frontend/javascripts/**/*"],
     "exclude": ["./node_modules/**/*", "**/*.spec.ts"]
    }

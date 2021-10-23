@@ -7,9 +7,7 @@ import {
   Link
 } from "react-router-dom";
 
-interface Props {
-  
-}
+import {Props} from '@Interface/index';
 
 export default function App({} : Props ) : JSX.Element {
     return (
