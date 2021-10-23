@@ -3,29 +3,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); 
 const glob = require('glob');
 
 const jsRoute = './frontend';
 
-const imgPath = jsRoute + '/images/';
 const jsPath = jsRoute + '/javascripts/';
 const cssPath = jsRoute + '/stylesheets/';
 const htmlPath = jsRoute + '/html/';
 
-const imgs = glob.sync(imgPath + '*');
-const js = [jsPath + 'app.js'];
-const ts = [jsPath + 'app.ts'];
+const tsx = [jsPath + 'app.tsx'];
 
 console.log(__dirname);
 
 module.exports = {
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
 
-  // enntry file
+  // entry file
   entry: {
-    main: ['@babel/polyfill', ...js],
-    //main: [...ts],
+    main: [...tsx],
   },
   // 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
   output: {
@@ -44,8 +40,8 @@ module.exports = {
       '@Images': path.resolve(__dirname, jsPath, 'images'),
       '@View': path.resolve(__dirname, jsPath, 'view'),
     },
-    extensions: ['.jsx', '.sass', '.scss', '.css', '.js'],
-    //extensions: ['.jsx', '.sass', '.scss', '.css', '.tsx', '.ts', '.js'],
+
+    extensions: ['.jsx', '.sass', '.scss', '.css', '.tsx', '.ts', '.js'],
   },
 
   plugins: [
@@ -67,6 +63,7 @@ module.exports = {
 
     new webpack.ProgressPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new ForkTsCheckerWebpackPlugin(),
   ],
 
   module: {
@@ -77,17 +74,17 @@ module.exports = {
       },
 
       {
-        test: /\.js/,
-        include: [path.resolve(jsPath)],
-
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
+        test: /\.(ts|tsx)$/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
           },
-        },
+        ],
+        exclude: /node_modules/,
       },
 
       {

@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,7 +7,11 @@ import {
   Link
 } from "react-router-dom";
 
-export default function App({ store }) {
+interface Props {
+  
+}
+
+export default function App({} : Props ) : JSX.Element {
     return (
       <Router>
         <div>
@@ -43,15 +47,15 @@ export default function App({ store }) {
     );
   }
   
-  function Home() {
+  function Home() : JSX.Element {
     return <h2>Home</h2>;
   }
   
-  function About() {
+  function About() : JSX.Element  {
     return <h2>About</h2>;
   }
   
-  function Users() {
+  function Users() : JSX.Element {
     return <h2>Users</h2>;
   }
 
