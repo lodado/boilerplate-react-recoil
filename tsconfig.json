@@ -16,7 +16,7 @@
 
       "paths": {
         "@Component/*": ["javascripts/component/*"],
-        "@Interface/*": ["javascripts/interface/*"],
+        "@Interface/*": ["javascripts/interface/index.ts"],
         "@Style/*": ["./frontend/stylesheets/*"]
       }
     },
