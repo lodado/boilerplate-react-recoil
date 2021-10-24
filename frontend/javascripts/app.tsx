@@ -6,8 +6,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import {RecoilRoot} from 'recoil';
 
 import {Props} from '@Interface/';
+
+import {CharacterCounter} from '@Component/main';
 
 export default function App({} : Props ) : JSX.Element {
     return (
@@ -34,7 +37,7 @@ export default function App({} : Props ) : JSX.Element {
               <About />
             </Route>
             <Route path="/main">
-              <Users />
+              <CharacterCounter />
             </Route>
             <Route path="/">
               <Home/>
@@ -58,7 +61,9 @@ export default function App({} : Props ) : JSX.Element {
   }
 
   ReactDOM.render(
-      <App />,
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>,
     document.getElementById('app')
   );
   
