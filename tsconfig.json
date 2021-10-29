@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "target":"es6",
-      "module":"commonjs",
+      "module":"ES6",
       "moduleResolution": "node",
       "noResolve": false,
       "noImplicitAny": false,
@@ -11,7 +11,6 @@
       "jsx": "react",
       "allowSyntheticDefaultImports": true,
       "keyofStringsOnly": true,
-
       "baseUrl": "./frontend/",
 
       "paths": {
@@ -23,7 +22,7 @@
         "@Selector/*": ["javascripts/state/selector/*"]
       }
     },
-    
+
     "include": ["frontend/javascripts/**/*"],
     "exclude": ["./node_modules/**/*", "**/*.spec.ts"]
    }

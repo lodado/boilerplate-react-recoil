@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); 
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const tsConfigPath = path.resolve(__dirname, "./tsconfig.json");
 
@@ -16,8 +16,6 @@ const htmlPath = jsRoute + '/html/';
 const tsx = [jsPath + 'app.tsx'];
 
 console.log(__dirname);
-
-console.log(path.resolve(__dirname, "./tsconfig.json"));
 
 module.exports = {
   mode: 'production',
@@ -60,7 +58,7 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin(),
-    
+
   ],
 
   module: {
