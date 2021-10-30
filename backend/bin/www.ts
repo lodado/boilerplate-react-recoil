@@ -1,9 +1,3 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
 import debugs from 'debug';
 import * as http from 'http';
 import app from '../app';

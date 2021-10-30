@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"], //add
+  "extends": ["plugin:react/recommended", "airbnb"],
 
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
