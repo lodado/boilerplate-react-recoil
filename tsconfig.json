@@ -1,28 +1,28 @@
 {
-    "compilerOptions": {
-      "target":"es6",
-      "module":"ES6",
-      "moduleResolution": "node",
-      "noResolve": false,
-      "noImplicitAny": false,
-      "removeComments": false,
-      "sourceMap": true,
-      "allowJs": true,
-      "jsx": "react",
-      "allowSyntheticDefaultImports": true,
-      "keyofStringsOnly": true,
-      "baseUrl": "./frontend/",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ES6",
+    "moduleResolution": "node",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true,
+    "baseUrl": "./frontend/",
 
-      "paths": {
-        "@Component/*": ["javascripts/component/*"],
-        "@Interface/*": ["javascripts/interface/index.ts"],
-        "@Style/*": ["stylesheets/*"],
-        "@State/*": ["javascripts/state/*"],
-        "@Atom/*": ["javascripts/state/atom/*"],
-        "@Selector/*": ["javascripts/state/selector/*"]
-      }
-    },
+    "paths": {
+      "@Component/*": ["javascripts/component/*"],
+      "@Interface/*": ["javascripts/interface/index.ts"],
+      "@Style/*": ["stylesheets/*"],
+      "@State/*": ["javascripts/state/*"],
+      "@Atom/*": ["javascripts/state/atom/*"],
+      "@Selector/*": ["javascripts/state/selector/*"]
+    }
+  },
 
-    "include": ["frontend/javascripts/**/*"],
-    "exclude": ["./node_modules/**/*", "**/*.spec.ts"]
-   }
+  "include": ["frontend/javascripts/**/*"],
+  "exclude": ["./node_modules/**/*", "**/*.spec.ts"]
+}

@@ -1,13 +1,7 @@
 import * as React from 'react';
-import {
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-  RecoilState,
-} from 'recoil';
+import { useRecoilState } from 'recoil';
 
-import { textState } from '@Atom/main';
+import textState from '@Atom/main';
 
 function CharacterCounter(): JSX.Element {
   return (

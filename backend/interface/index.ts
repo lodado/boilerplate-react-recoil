@@ -1,5 +1,5 @@
-interface ResponseError extends Error{
-    status? : number
+interface ResponseError extends Error {
+  status?: number;
 }
 
-export {ResponseError}
+export { ResponseError };
