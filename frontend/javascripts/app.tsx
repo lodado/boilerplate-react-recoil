@@ -2,10 +2,10 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import { Props } from '@Interface/';
-import { CharacterCounter } from '@Component/main';
 
-export default function App({}: Props): JSX.Element {
+import CharacterCounter from '@Component/main';
+
+export default function App(): JSX.Element {
   return (
     <Router>
       <div>
@@ -57,5 +57,5 @@ ReactDOM.render(
   <RecoilRoot>
     <App />
   </RecoilRoot>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

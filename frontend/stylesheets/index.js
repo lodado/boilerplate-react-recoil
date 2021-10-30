@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-padding: 0.375rem 0.75rem;
-border-radius: 0.25rem;
-font-size: 1rem;
-line-height: 1.5;
-border: 1px solid lightgray;
-color: gray;
-backgroud: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid lightgray;
+  color: gray;
+  backgroud: white;
 `;
+
+export const apple = 'apple';
