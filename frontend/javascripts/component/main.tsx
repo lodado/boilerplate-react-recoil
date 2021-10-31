@@ -5,7 +5,7 @@ import textState from '@Atom/main';
 
 function CharacterCounter(): JSX.Element {
   return (
-    <div>
+    <div className="test">
       <TextInput />
     </div>
   );

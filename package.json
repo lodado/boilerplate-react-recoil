@@ -7,14 +7,20 @@
     "build": "webpack --watch",
     "publish": "webpack --config webpack.config-prod.js",
     "forever": "forever start ./backend/bin/www",
-    "test": "start npm start && start npm run build",
-    "prettier": "npx prettier --write ."
+    "fork": "start npm start && start npm run build",
+    "prettier": "npx prettier --write .",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^12.1.2",
     "@types/cookie-parser": "^1.4.2",
     "@types/express": "^4.17.13",
     "@types/http-errors": "^1.8.1",
@@ -40,6 +46,7 @@
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "http-errors": "~1.6.3",
+    "jest-styled-components": "^7.0.5",
     "mini-css-extract-plugin": "^2.4.2",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.0",
@@ -54,13 +61,16 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
     "styled-components": "^5.3.1",
+    "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
+    "tsconfig-paths-jest": "0.0.1",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.15.0",
     "@types/debug": "^4.1.7",
+    "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^7.32.0",
@@ -75,6 +85,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^6.4.0",
+    "jest": "^27.3.1",
     "prettier": "2.4.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^16.11.4",

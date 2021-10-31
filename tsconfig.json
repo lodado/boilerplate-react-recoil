@@ -11,15 +11,15 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,
-    "baseUrl": "./frontend/",
+    "baseUrl": "./",
 
     "paths": {
-      "@Component/*": ["javascripts/component/*"],
-      "@Interface/*": ["javascripts/interface/index.ts"],
-      "@Style/*": ["stylesheets/*"],
-      "@State/*": ["javascripts/state/*"],
-      "@Atom/*": ["javascripts/state/atom/*"],
-      "@Selector/*": ["javascripts/state/selector/*"]
+      "@Component/*": ["frontend/javascripts/component/*"],
+      "@Interface/*": ["frontend/javascripts/interface/*"],
+      "@Style/*": ["frontend/stylesheets/*"],
+      "@State/*": ["frontend/javascripts/state/*"],
+      "@Atom/*": ["frontend/javascripts/state/atom/*"],
+      "@Selector/*": ["frontend/javascripts/state/selector/*"]
     }
   },
 
